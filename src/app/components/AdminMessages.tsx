@@ -12,8 +12,8 @@ interface Message {
 }
 
 // Get values from environment variables
-const SUPABASE_PROJECT_ID = import.meta.env.VITE_SUPABASE_PROJECT_ID || 'mqikgxqkcqvheigamvjt';
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xaWtneHFrY3F2aGVpZ2Ftdmp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5NzM5ODMsImV4cCI6MjA4ODU0OTk4M30.n-oUc8ylCMctne0pBjvGUKd45g1kZQHMvlAk-zS3uVg';
+const SUPABASE_PROJECT_ID = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export function AdminMessages() {
   const [messages, setMessages] = useState<Message[]>([]);

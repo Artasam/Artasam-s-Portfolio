@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Github, Twitter, Send } from 'lucide-react';
 import { useState } from 'react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
+
+// Values must be set in environment variables — no local imports or hardcoded fallbacks
+const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+const publicAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -14,11 +17,17 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+
+    if (!projectId || !publicAnonKey) {
+      console.error('Missing Supabase environment variables.');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -38,7 +47,7 @@ export function Contact() {
       if (response.ok && data.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
-        
+
         // Reset success message after 5 seconds
         setTimeout(() => {
           setSubmitStatus('idle');
@@ -97,8 +106,8 @@ export function Contact() {
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
                   animate={{
-                    boxShadow: focusedField === 'name' 
-                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)' 
+                    boxShadow: focusedField === 'name'
+                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)'
                       : '0 0 0 0px rgba(103, 232, 249, 0)',
                   }}
                   className="w-full px-6 py-4 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/40 focus:border-cyan-500/50 focus:outline-none transition-all"
@@ -120,8 +129,8 @@ export function Contact() {
                   onFocus={() => setFocusedField('email')}
                   onBlur={() => setFocusedField(null)}
                   animate={{
-                    boxShadow: focusedField === 'email' 
-                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)' 
+                    boxShadow: focusedField === 'email'
+                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)'
                       : '0 0 0 0px rgba(103, 232, 249, 0)',
                   }}
                   className="w-full px-6 py-4 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/40 focus:border-cyan-500/50 focus:outline-none transition-all"
@@ -143,8 +152,8 @@ export function Contact() {
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
                   animate={{
-                    boxShadow: focusedField === 'message' 
-                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)' 
+                    boxShadow: focusedField === 'message'
+                      ? '0 0 0 3px rgba(103, 232, 249, 0.3)'
                       : '0 0 0 0px rgba(103, 232, 249, 0)',
                   }}
                   className="w-full px-6 py-4 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/40 focus:border-cyan-500/50 focus:outline-none transition-all resize-none"
@@ -211,8 +220,8 @@ export function Contact() {
                   <p className="text-white/60 text-sm">I'll respond within 24 hours</p>
                 </div>
               </div>
-              <a 
-                href="mailto:artasambinrashid@gmail.com" 
+              <a
+                href="mailto:artasambinrashid@gmail.com"
                 className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors"
               >
                 artasambinrashid@gmail.com
