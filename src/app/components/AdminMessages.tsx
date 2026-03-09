@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Calendar, User, RefreshCw } from 'lucide-react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 
 interface Message {
   id: string;
@@ -11,6 +10,10 @@ interface Message {
   timestamp: string;
   status: string;
 }
+
+// Get values from environment variables
+const SUPABASE_PROJECT_ID = import.meta.env.VITE_SUPABASE_PROJECT_ID || 'mqikgxqkcqvheigamvjt';
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xaWtneHFrY3F2aGVpZ2Ftdmp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5NzM5ODMsImV4cCI6MjA4ODU0OTk4M30.n-oUc8ylCMctne0pBjvGUKd45g1kZQHMvlAk-zS3uVg';
 
 export function AdminMessages() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -23,10 +26,10 @@ export function AdminMessages() {
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1fed1eb5/contact/messages`,
+        `https://${SUPABASE_PROJECT_ID}.supabase.co/functions/v1/make-server-1fed1eb5/contact/messages`,
         {
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
           },
         }
       );
