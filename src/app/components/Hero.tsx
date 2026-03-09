@@ -55,7 +55,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="text-2xl font-black text-white tracking-tight"
             >
-              AI/ML
+              Artasam.Dev
             </motion.div>
             
             {/* Desktop Navigation */}
