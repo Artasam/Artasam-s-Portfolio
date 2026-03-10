@@ -17,7 +17,7 @@ const projects = [
 
   {
     title: 'Air Quality Index Prediction (Rawalpindi)',
-    description: 'ML-based AQI prediction system for Islamabad using real-time API data, CI/CD pipelines, and Hopsworks Feature Store for automated data processing and model retraining',
+    description: 'ML-based AQI prediction system for Rawalpindi using real-time API data, CI/CD pipelines, and Hopsworks Feature Store for automated data processing and model retraining',
     image: 'https://images.unsplash.com/photo-1674307130741-bed3d812b680?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaXIlMjBxdWFsaXR5JTIwcG9sbHV0aW9uJTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NzI5NjYyMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: [
       { name: 'Machine Learning', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
