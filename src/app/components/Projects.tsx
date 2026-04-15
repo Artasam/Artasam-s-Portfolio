@@ -36,7 +36,8 @@ const projects = [
       { name: 'Deep Learning', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
       { name: 'Python', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
     ],
-    impact: 'Final Year Project' 
+    impact: 'Final Year Project',
+    github: 'https://github.com/Artasam/Outfit-Aura-Final-Year-Project-', // Replace with actual repo URL
   },
   {
     title: 'AI Resume Screening & Matching System',
@@ -85,7 +86,7 @@ export function Projects() {
             >
               {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-teal-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-teal-500/10 transition-all duration-500" />
-              
+
               {/* Project Image */}
               <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10" />
