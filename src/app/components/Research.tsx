@@ -32,7 +32,7 @@ export function Research() {
   return (
     <section id="research" className="relative py-32 bg-[#09090b]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 sm:mb-20 gap-4 sm:gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,14 +40,14 @@ export function Research() {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-sm font-bold text-rose-600 uppercase tracking-widest mb-4">Credentials</h2>
-            <h3 className="text-5xl md:text-6xl font-black text-white leading-tight">
+            <h2 className="text-xs sm:text-sm font-bold text-rose-600 uppercase tracking-widest mb-3 sm:mb-4">Credentials</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
               verified <span className="text-zinc-600">expertise.</span>
             </h3>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
           {publications.map((paper, index) => (
             <motion.div
               key={paper.title}
@@ -55,27 +55,27 @@ export function Research() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-[#0d0d12] border border-zinc-800 rounded-3xl p-8 md:p-12 hover:border-rose-600/30 transition-all overflow-hidden"
+              className="group relative bg-[#0d0d12] border border-zinc-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 hover:border-rose-600/30 transition-all overflow-hidden"
             >
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-zinc-900 rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-rose-500 group-hover:bg-rose-500/10 transition-all mb-8">
-                  <Award className="w-7 h-7" />
+                <div className="w-10 sm:w-14 h-10 sm:h-14 bg-zinc-900 rounded-lg sm:rounded-2xl flex items-center justify-center text-zinc-500 group-hover:text-rose-500 group-hover:bg-rose-500/10 transition-all mb-4 sm:mb-8">
+                  <Award className="w-5 sm:w-7 h-5 sm:h-7" />
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1.5 text-[10px] font-bold text-rose-500 bg-rose-500/5 border border-rose-500/20 rounded-md uppercase tracking-wider">
+                <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                  <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-[8px] sm:text-[10px] font-bold text-rose-500 bg-rose-500/5 border border-rose-500/20 rounded-md uppercase tracking-wider">
                     {paper.venue}
                   </span>
-                  <span className="px-3 py-1.5 text-[10px] font-bold text-zinc-500 bg-zinc-900 border border-zinc-800 rounded-md uppercase tracking-wider">
+                  <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-[8px] sm:text-[10px] font-bold text-zinc-500 bg-zinc-900 border border-zinc-800 rounded-md uppercase tracking-wider">
                     {paper.type}
                   </span>
                 </div>
 
-                <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-rose-500 transition-colors">
+                <h4 className="text-lg sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-rose-500 transition-colors">
                   {paper.title}
                 </h4>
                 
-                <p className="text-zinc-500 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed font-medium">
                   {paper.abstract}
                 </p>
               </div>

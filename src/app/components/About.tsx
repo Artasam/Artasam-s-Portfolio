@@ -20,7 +20,7 @@ export function About() {
   return (
     <section id="about" className="relative py-32 bg-[#09090b] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
           {/* Left - Bio */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -28,12 +28,12 @@ export function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-rose-600 uppercase tracking-widest mb-6">About the Engineer</h2>
-            <h3 className="text-5xl md:text-6xl font-black text-white mb-10 leading-tight">
+            <h2 className="text-xs sm:text-sm font-bold text-rose-600 uppercase tracking-widest mb-4 sm:mb-6">About the Engineer</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-10 leading-tight">
               Solving complex problems with <span className="text-zinc-600">intelligence.</span>
             </h3>
             
-            <div className="space-y-6 text-zinc-400 text-lg leading-relaxed font-medium">
+            <div className="space-y-4 sm:space-y-6 text-zinc-400 text-base sm:text-lg leading-relaxed font-medium">
               <p>
                 I am an AI/ML Engineer dedicated to building scalable, production-grade intelligence. 
                 My expertise lies at the intersection of deep learning, computer vision, and autonomous agentic systems.
@@ -60,20 +60,20 @@ export function About() {
               </p>
             </div>
 
-            <div className="mt-12 flex items-center gap-8 border-t border-zinc-800 pt-10">
+            <div className="mt-8 sm:mt-12 flex flex-wrap gap-4 sm:gap-8 border-t border-zinc-800 pt-6 sm:pt-10">
               <div>
-                <p className="text-3xl font-black text-white">5+</p>
-                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Production Systems</p>
+                <p className="text-2xl sm:text-3xl font-black text-white">5+</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Production Systems</p>
               </div>
-              <div className="w-px h-10 bg-zinc-800" />
+              <div className="w-px h-10 bg-zinc-800 hidden sm:block" />
               <div>
-                <p className="text-3xl font-black text-white">3+</p>
-                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Experience Programs</p>
+                <p className="text-2xl sm:text-3xl font-black text-white">3+</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Experience Programs</p>
               </div>
-              <div className="w-px h-10 bg-zinc-800" />
+              <div className="w-px h-10 bg-zinc-800 hidden sm:block" />
               <div>
-                <p className="text-3xl font-black text-white">100%</p>
-                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Automated Workflows</p>
+                <p className="text-2xl sm:text-3xl font-black text-white">100%</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-widest mt-1">Automated Workflows</p>
               </div>
             </div>
           </motion.div>
@@ -84,9 +84,9 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-[#0d0d12] border border-zinc-800 rounded-3xl p-8 md:p-12"
+            className="bg-[#0d0d12] border border-zinc-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12"
           >
-            <h4 className="text-xl font-bold text-white mb-10 flex items-center gap-3">
+            <h4 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-10 flex items-center gap-3">
               <ShieldCheck className="text-rose-600 w-6 h-6" />
               Technical Stack
             </h4>

@@ -104,14 +104,14 @@ export function Hero() {
       />
       
       {/* Hero Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-20 pb-20 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
         {/* Left Side - Text */}
         <div className="max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-rose-500 text-xs font-bold uppercase tracking-widest"
+            className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-rose-500 text-xs font-bold uppercase tracking-widest"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
@@ -124,7 +124,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 sm:mb-8 tracking-tighter leading-[1]"
           >
             {["Building", "the", "Future", "of", "AI"].map((word, i) => (
               <motion.span
@@ -143,7 +143,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-xl text-zinc-400 mb-10 leading-relaxed max-w-xl"
+            className="text-base sm:text-lg md:text-xl text-zinc-400 mb-8 sm:mb-10 leading-relaxed max-w-xl"
           >
             Specializing in scalable machine learning systems, agentic AI solutions, and end-to-end MLOps pipelines. We deliver enterprise-grade intelligence.
           </motion.p>
@@ -152,13 +152,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
           >
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-rose-600 text-white font-bold rounded-xl flex items-center gap-2 hover:bg-rose-700 transition-all shadow-xl shadow-rose-600/20"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-rose-600 text-white font-bold rounded-lg sm:rounded-xl flex items-center justify-center sm:justify-start gap-2 hover:bg-rose-700 transition-all shadow-xl shadow-rose-600/20 min-h-12"
             >
               Start a Project <ArrowRight className="w-5 h-5" />
             </motion.a>
@@ -167,18 +167,18 @@ export function Hero() {
               download
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-zinc-400 font-bold rounded-xl flex items-center gap-2 hover:border-rose-600/50 hover:bg-rose-600/5 hover:text-white transition-all group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 border border-zinc-800 text-zinc-400 font-bold rounded-lg sm:rounded-xl flex items-center justify-center sm:justify-start gap-2 hover:border-rose-600/50 hover:bg-rose-600/5 hover:text-white transition-all group min-h-12"
             >
-              <Download className="w-5 h-5 group-hover:text-rose-500 transition-colors" /> Download Resume
+              <Download className="w-5 h-5 group-hover:text-rose-500 transition-colors" /> <span className="hidden sm:inline">Download Resume</span><span className="sm:hidden">Resume</span>
             </motion.a>
             <motion.a
               href="/Artasam_CV.pdf"
               download
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-zinc-400 font-bold rounded-xl flex items-center gap-2 hover:border-rose-600/50 hover:bg-rose-600/5 hover:text-white transition-all group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 border border-zinc-800 text-zinc-400 font-bold rounded-lg sm:rounded-xl flex items-center justify-center sm:justify-start gap-2 hover:border-rose-600/50 hover:bg-rose-600/5 hover:text-white transition-all group min-h-12"
             >
-              <Download className="w-5 h-5 group-hover:text-rose-500 transition-colors" /> Download CV
+              <Download className="w-5 h-5 group-hover:text-rose-500 transition-colors" /> <span className="hidden sm:inline">Download CV</span><span className="sm:hidden">CV</span>
             </motion.a>
           </motion.div>
           
@@ -187,10 +187,10 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="mt-16 pt-10 border-t border-zinc-800"
+            className="mt-10 sm:mt-16 pt-6 sm:pt-10 border-t border-zinc-800"
           >
-            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6">Core Capabilities</p>
-            <div className="flex flex-wrap gap-8">
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 sm:mb-6">Core Capabilities</p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8">
               {[
                 { icon: <Layers className="w-5 h-5" />, label: "ML Pipelines" },
                 { icon: <Cpu className="w-5 h-5" />, label: "Agentic AI" },
@@ -212,7 +212,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="relative hidden lg:block"
         >
           {/* Terminal Window */}
           <div className="w-full bg-[#0d0d12]/80 backdrop-blur-xl rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
