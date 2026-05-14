@@ -247,15 +247,15 @@ export function Hero() {
 
         </motion.div>
 
-        {/* Headshot Badge - Visible on Mobile and Desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="lg:absolute lg:-bottom-6 lg:-left-6 mt-12 lg:mt-0 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center gap-4 w-fit mx-auto lg:mx-0"
+          whileHover={{ scale: 1.05, rotate: 2 }}
+          className="lg:absolute lg:bottom-12 lg:-right-8 mt-12 lg:mt-0 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center gap-4 w-fit mx-auto lg:mx-0 z-30 lg:rotate-1"
         >
           <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-600">
-            <img src={photo} alt="Artasam" className="w-full h-full object-cover" />
+            <img src={photo} alt="Artasam" className="w-full h-full object-cover" loading="lazy" decoding="async" />
           </div>
           <div>
             <p className="text-sm font-bold text-white leading-tight">Artasam Bin Rashid</p>
