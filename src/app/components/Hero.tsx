@@ -58,29 +58,29 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#09090b]">
       {/* Background Mesh/Blobs */}
       <div className="absolute inset-0 z-0">
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-rose-900/20 rounded-full blur-[120px]" 
+          className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-rose-900/20 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, -80, 0],
             y: [0, 120, 0],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-rose-600/10 rounded-full blur-[120px]" 
+          className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-rose-600/10 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, 50, 0],
             y: [0, -100, 0],
           }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[10%] left-[20%] w-[45%] h-[45%] bg-zinc-800/30 rounded-full blur-[120px]" 
+          className="absolute -bottom-[10%] left-[20%] w-[45%] h-[45%] bg-zinc-800/30 rounded-full blur-[120px]"
         />
       </div>
 
@@ -99,10 +99,10 @@ export function Hero() {
       />
 
       {/* Grid Background */}
-      <div className="absolute inset-0 z-0 opacity-[0.07]" 
-           style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+      <div className="absolute inset-0 z-0 opacity-[0.07]"
+        style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
       />
-      
+
       {/* Hero Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
         {/* Left Side - Text */}
@@ -119,8 +119,8 @@ export function Hero() {
             </span>
             AI/ML Solutions & Engineering
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -138,8 +138,8 @@ export function Hero() {
               </motion.span>
             ))}
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -147,8 +147,8 @@ export function Hero() {
           >
             Specializing in scalable machine learning systems, agentic AI solutions, and end-to-end MLOps pipelines. We deliver enterprise-grade intelligence.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
@@ -181,9 +181,9 @@ export function Hero() {
               <Download className="w-5 h-5 group-hover:text-rose-500 transition-colors" /> <span className="hidden sm:inline">Download CV</span><span className="sm:hidden">CV</span>
             </motion.a>
           </motion.div>
-          
+
           {/* Engineering Capabilities Badge */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
@@ -229,16 +229,16 @@ export function Hero() {
               </div>
               <div className="w-12" />
             </div>
-            
+
             {/* Terminal Content */}
             <div className="p-8 font-mono text-sm leading-relaxed min-h-[300px]">
               {terminalLines.map((line, i) => (
                 <div key={i} className="mb-3 flex gap-3">
                   <span className="text-zinc-700">{i + 1}</span>
-                  <TypewriterLine 
-                    text={line.text} 
-                    color={line.color} 
-                    delay={1.5 + (i * 1.2)} 
+                  <TypewriterLine
+                    text={line.text}
+                    color={line.color}
+                    delay={1.5 + (i * 1.2)}
                   />
                 </div>
               ))}
@@ -251,21 +251,22 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Headshot Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.5 }}
-            className="absolute -bottom-6 -left-6 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center gap-4"
-          >
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-600">
-              <img src={photo} alt="Artasam" className="w-full h-full object-cover" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-white leading-tight">Artasam Bin Rashid</p>
-              <p className="text-[10px] font-bold text-rose-500 uppercase tracking-wider">Expert Engineer</p>
-            </div>
-          </motion.div>
+        </motion.div>
+
+        {/* Headshot Badge - Visible on Mobile and Desktop */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="lg:absolute lg:-bottom-6 lg:-left-6 mt-12 lg:mt-0 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 p-4 rounded-2xl shadow-2xl flex items-center gap-4 w-fit mx-auto lg:mx-0"
+        >
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-600">
+            <img src={photo} alt="Artasam" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-white leading-tight">Artasam Bin Rashid</p>
+            <p className="text-[10px] font-bold text-rose-500 uppercase tracking-wider">Expert Engineer</p>
+          </div>
         </motion.div>
       </div>
 
@@ -277,8 +278,8 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block z-20"
       >
         <div className="flex flex-col items-center gap-2">
-           <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Scroll</span>
-           <motion.div
+          <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Scroll</span>
+          <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-1 h-12 bg-gradient-to-b from-rose-600 to-transparent rounded-full"

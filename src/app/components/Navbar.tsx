@@ -59,7 +59,7 @@ export function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-20 left-4 right-4 bg-[#0d0d12]/95 backdrop-blur-xl border border-zinc-800 rounded-2xl p-4 lg:hidden z-40"
+          className="absolute top-20 left-4 right-4 bg-[#0d0d12]/90 backdrop-blur-2xl border border-zinc-800 rounded-2xl p-6 lg:hidden z-40 shadow-2xl"
         >
           <div className="flex flex-col gap-4">
             {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
@@ -67,7 +67,7 @@ export function Navbar() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setIsOpen(false)}
-                className="text-sm font-bold text-zinc-500 hover:text-white uppercase tracking-widest transition-colors py-2"
+                className="text-base font-bold text-zinc-400 hover:text-white uppercase tracking-widest transition-colors py-3 border-b border-zinc-800/50 last:border-0"
               >
                 {item}
               </a>
@@ -75,7 +75,7 @@ export function Navbar() {
             <a 
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="w-full px-4 py-3 bg-rose-600 text-white text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-rose-700 transition-all text-center mt-2"
+              className="w-full px-4 py-4 bg-rose-600 text-white text-sm font-black uppercase tracking-widest rounded-xl hover:bg-rose-700 transition-all text-center mt-4"
             >
               Hire Me
             </a>

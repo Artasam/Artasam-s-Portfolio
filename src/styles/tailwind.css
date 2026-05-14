@@ -18,9 +18,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Performance optimization */
+.will-change-scroll {
+  will-change: transform, opacity;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -28,10 +33,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
+  background: #18181b;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e11d48;
+}
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 0px; /* Hide scrollbar on mobile for cleaner look */
+  }
 }

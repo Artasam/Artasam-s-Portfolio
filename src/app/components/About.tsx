@@ -91,18 +91,18 @@ export function About() {
               Technical Stack
             </h4>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
               {skills.map((skill, index) => {
                 const Icon = skill.icon;
                 return (
-                  <motion.div
+                   <motion.div
                     key={skill.name}
                     whileHover={{ y: -5 }}
                     className="group"
                   >
-                    <div className="w-full aspect-square rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-center gap-3 group-hover:border-rose-600/30 group-hover:bg-rose-600/5 transition-all">
-                      <Icon className="w-8 h-8 text-zinc-500 group-hover:text-rose-500 transition-colors" />
-                      <p className="text-[10px] font-bold text-zinc-500 group-hover:text-white uppercase tracking-widest transition-colors">{skill.name}</p>
+                    <div className="w-full aspect-square rounded-xl sm:rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-center gap-2 sm:gap-3 group-hover:border-rose-600/30 group-hover:bg-rose-600/5 transition-all p-3">
+                      <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-zinc-500 group-hover:text-rose-500 transition-colors" />
+                      <p className="text-[8px] sm:text-[10px] font-bold text-zinc-500 group-hover:text-white uppercase tracking-widest transition-colors text-center">{skill.name}</p>
                     </div>
                   </motion.div>
                 );
