@@ -56,47 +56,41 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#09090b]">
-      {/* Background Mesh/Blobs */}
-      <div className="absolute inset-0 z-0">
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-rose-900/20 rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 120, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-rose-600/10 rounded-full blur-[120px]"
-        />
+      {/* Background Mesh/Blobs - Simplified for Mobile */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           animate={{
             x: [0, 50, 0],
-            y: [0, -100, 0],
+            y: [0, 30, 0],
           }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[10%] left-[20%] w-[45%] h-[45%] bg-zinc-800/30 rounded-full blur-[120px]"
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[10%] -left-[10%] w-[70%] sm:w-[50%] h-[70%] sm:h-[50%] bg-rose-900/10 sm:bg-rose-900/20 rounded-full blur-[80px] sm:blur-[120px]"
+        />
+        <motion.div
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 60, 0],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[20%] -right-[10%] w-[60%] sm:w-[40%] h-[60%] sm:h-[40%] bg-rose-600/5 sm:bg-rose-600/10 rounded-full blur-[80px] sm:blur-[120px]"
         />
       </div>
 
-      {/* Interactive Spotlight */}
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-10 opacity-50"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${cursorX}px ${cursorY}px,
-              rgba(225, 29, 72, 0.15),
-              transparent 80%
-            )
-          `,
-        }}
-      />
+      {/* Interactive Spotlight - Desktop Only for performance */}
+      <div className="hidden lg:block">
+        <motion.div
+          className="pointer-events-none absolute inset-0 z-10 opacity-50"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(
+                650px circle at ${cursorX}px ${cursorY}px,
+                rgba(225, 29, 72, 0.15),
+                transparent 80%
+              )
+            `,
+          }}
+        />
+      </div>
 
       {/* Grid Background */}
       <div className="absolute inset-0 z-0 opacity-[0.07]"

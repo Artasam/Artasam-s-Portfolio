@@ -12,7 +12,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-6"
     >
-      <div className="w-full max-w-7xl flex items-center justify-between px-4 sm:px-6 py-3 bg-[#0d0d12]/80 backdrop-blur-xl border border-zinc-800 rounded-2xl sm:rounded-full shadow-2xl shadow-rose-900/10">
+      <div className="w-full max-w-7xl flex items-center justify-between px-4 sm:px-6 py-3 bg-[#0d0d12]/80 backdrop-blur-md sm:backdrop-blur-xl border border-zinc-800 rounded-2xl sm:rounded-full shadow-2xl shadow-rose-900/10">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
           <Logo />
@@ -59,7 +59,7 @@ export function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-20 left-4 right-4 bg-[#0d0d12]/90 backdrop-blur-2xl border border-zinc-800 rounded-2xl p-6 lg:hidden z-40 shadow-2xl"
+          className="absolute top-20 left-4 right-4 bg-[#0d0d12]/90 backdrop-blur-lg border border-zinc-800 rounded-2xl p-6 lg:hidden z-40 shadow-2xl"
         >
           <div className="flex flex-col gap-4">
             {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
